@@ -123,6 +123,7 @@ const Navbar = () => {
                           <button className="btn btn-light address-btn dropdown-item" onClick={handleAddress}> Manage Address </button>
                           <button className="btn btn-light notifications-btn dropdown-item" onClick={handleNotifications}> Notifications </button>
                           <button className="btn btn-light accounts-btn dropdown-item" onClick={handleAccounts}> Manage Account </button>
+                          <Link to="/adminlogin"  className="btn btn-primary cart-btn m-2"> Admin Login </Link>
                           <button type="button" className="btn btn-danger logout-btn m-3" onClick={handleLogout}>Logout ➡️</button>
                          </div>
                       }

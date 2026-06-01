@@ -7,48 +7,36 @@ import { toast } from "react-toastify";
 
 const Order = ({ selectedProduct }) => {
 
-  // ✅ Fix 2 — quantity state declared
+  // ✅ VARIABLES
   const [quantity, setQuantity] = useState(1);
   const loggedInUser = JSON.parse(localStorage.getItem("userData"));
   const userId = loggedInUser?.userId;
 
-  // ✅ Fix 1 — handleConfirmOrder is separate, return is outside
+
   const handleConfirmOrder = async () => {
     try {
-      const orderData = {
-        userId: userId,
-        productId: selectedProduct.productId,
-        productName: selectedProduct.productName,
-        price: selectedProduct.price,
-        quantity: quantity  // ✅ Fix 4 — use quantity state
-       
-  };
-  const handleDeleteCartItem = (productId) => {
+        // 1. Prepare order data
+            const orderData = {
+              userId: userId,
+              productId: selectedProduct.productId,
+              productName: selectedProduct.productName,
+              price: selectedProduct.price,
+              quantity: quantity 
+          };    
 
-    const updatedCart = cartItems.filter(
-        (item) => item.productId !== productId
-    );
-
-    setCartItems(updatedCart);
-
-    toast.success("Item removed from cart!");
-  };    
-
-      const orderResponse = await axios.post( "http://localhost:8080/placeOrder", orderData);
-
-      console.log(orderResponse);
-      alert("Order placed successfully!");
-      toast.success("Order placed successfully!");
-      window.location.reload();
+          // 2. Make API call to place order    
+          const orderResponse = await axios.post( "http://localhost:8080/placeOrder", orderData);
+         toast.success("Order placed successfully!");
+          setTimeout(() => {
+              window.location.reload();
+          }, 2000);
 
     } catch (error) {
       console.error("Error placing order:", error);
-      //alert("Failed to place order. Please try again.");
       toast.error("Failed to place order. Please try again.");
     }
-  };  // ✅ handleConfirmOrder closes here
-
-  // ✅ return is outside and after handleConfirmOrder
+  };  
+  
   return (
     <div
       className="modal fade"
@@ -126,15 +114,16 @@ const Order = ({ selectedProduct }) => {
 
         </div>
       </div>
-      <ToastContainer
-        position="top-right"
-        autoClose={3000}
-        hideProgressBar={false}
-        newestOnTop={true}
-        closeOnClick
-        pauseOnHover
-        theme="dark"
-    />
+
+            <ToastContainer
+              position="top-right"
+              autoClose={3000}
+              hideProgressBar={false}
+              newestOnTop={true}
+              closeOnClick
+              pauseOnHover
+              theme="dark"
+          />
     </div>
   );
 

@@ -10,7 +10,7 @@ import Login from './components/Login.jsx';
 import Signup from './components/Signup.jsx';
 import MyOrders from './pages/MyOrders.jsx';
 import ViewCart from './pages/ViewCart.jsx';
-
+import AdminLogin from './pages/AdminLogin.jsx';
 
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
@@ -37,6 +37,7 @@ createRoot(document.getElementById('root')).render(
         <Route path="/myorders" element={<MyOrders />} />
         <Route path="/viewcart" element={<ViewCart />} /> 
         <Route path="/products" element={<Home />} />
+        <Route path="/adminlogin" element={<AdminLogin />} />
       </Routes>
 
     </BrowserRouter>

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import '../index.css';
+import { ToastContainer } from 'react-toastify';
 
 import axios from 'axios';
 import { toast } from 'react-toastify';
@@ -178,6 +179,15 @@ const MyOrders = () => {
 
             <Footer />
 
+                <ToastContainer
+                position="top-right"
+                autoClose={750}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick
+                pauseOnHover
+                theme="dark"
+                />
         </div>
 
     );
