@@ -1,6 +1,10 @@
 import React, { useState } from "react";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 
 const AdminLogin = () => {
+    const navigate = useNavigate();
     const [adminData, setAdminData] = useState({
         email: "",
         password: ""
@@ -13,14 +17,42 @@ const AdminLogin = () => {
         });
     };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
+   const handleSubmit = async (e) => {
+    e.preventDefault();
 
-        console.log(adminData);
+    try {
 
-        // API Call Here
-        // axios.post("http://localhost:8080/admin/login", adminData);
-    };
+        const apiResponse = await axios.post(
+            "http://localhost:8080/auth/admin/login",
+            adminData
+        );
+
+        if (apiResponse.data.success) {
+
+            localStorage.setItem(
+                "user",
+                JSON.stringify(apiResponse.data.data)
+            );
+
+            if (apiResponse.data.data.role === "admin") {
+                navigate("/adminpage");
+            } else {
+                navigate("/");
+            }
+
+        } else {
+
+            alert(apiResponse.data.message);
+
+        }
+
+    } catch (error) {
+
+        console.error("Admin login failed:", error);
+        alert("Server Error");
+
+    }
+};
 
     return (
         <div className="container">
