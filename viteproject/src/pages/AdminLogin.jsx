@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
 
 
 const AdminLogin = () => {
@@ -35,22 +36,25 @@ const AdminLogin = () => {
             );
 
             if (apiResponse.data.data.role === "admin") {
-                navigate("/adminpage");
+                toast.success("authenticated✅");
+                setTimeout(() => {
+                    navigate("/adminpage");
+                }, 1500);
             } else {
                 navigate("/");
             }
-
-        } else {
-
-            alert(apiResponse.data.message);
 
         }
 
     } catch (error) {
 
         console.error("Admin login failed:", error);
-        alert("Server Error");
 
+        if(error.response){
+            alert(error.response.data.message);
+        }else{
+            alert("Server is not responding");
+        }
     }
 };
 
@@ -106,6 +110,16 @@ const AdminLogin = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer
+                position="top-center"
+                autoClose={500}
+                hideProgressBar={false}
+                newestOnTop={true}
+                closeOnClick
+                pauseOnHover
+                draggable
+                theme="light"
+            />
         </div>
     );
 };

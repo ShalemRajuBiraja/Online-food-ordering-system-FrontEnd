@@ -7,6 +7,7 @@ import {checkIsUserLoggedIn} from "../utils/utils";
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import { useEffect } from "react";
 
 const Navbar = () => {
 
@@ -21,14 +22,13 @@ const Navbar = () => {
           localStorage.removeItem("userData");
           localStorage.removeItem("token");
 
-          // 3. Update auth state
+          // 2. Update auth state
           setIsLoggedIn(false);
-
-          // 4. Redirect to home
-          navigate("/");              // if using React Router
-
-          // 5. Optional: show success toast
+            
           toast.success("Logged out successfully");
+          setTimeout(() => {
+            navigate("/home");
+          }, 500);
 
         } catch (error) {
           console.error("Logout failed:", error);
@@ -157,7 +157,7 @@ const Navbar = () => {
           </div>
 
         </div>
-
+               
     </nav>
   )
 };
