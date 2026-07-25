@@ -31,6 +31,12 @@ const Body = () => {
 
 
  const handleOrderNow = (food) => {
+  const token = localStorage.getItem("token");
+
+  if (!token) {
+    toast.warning("Please login to complete the order process!");
+    return;
+  }
   setSelectedFood(food);
   setShowOrderModal(true);
 };
