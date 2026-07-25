@@ -9,6 +9,23 @@
   width: 100%;
   z-index: 1030;
 } */
+ @media (max-width: 991px) {
+  .navbar-nav.ms-auto {
+    align-items: flex-start !important;
+    padding-top: 0.5rem;
+  }
+
+  .profile-avatar-btn {
+    margin-left: 0 !important;
+  }
+
+  .profile-dropdown {
+    position: static !important;
+    box-shadow: none !important;
+    border: 1px solid #eee;
+    margin-top: 0.5rem;
+  }
+}
 
 .custom-header .navbar-brand {
   color: #ff6b35;

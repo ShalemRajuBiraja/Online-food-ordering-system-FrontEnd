@@ -75,7 +75,7 @@ const Footer = () => {
           </div>
 
           {/* Quick Links */}
-          <div className="col-6 col-md-2">
+          <div className="col-4 col-md-2">
             <h6 className="text-uppercase fw-semibold mb-3 footer-heading">
               Quick Links
             </h6>
