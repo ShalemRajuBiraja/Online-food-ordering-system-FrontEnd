@@ -4,5 +4,5 @@ export const API_CONFIG = {
     AUTHORIZATION : "authorization",
     BEARER : "Bearer",
     TOKEN : "token",
-    TIMEOUT : 5000
+    TIMEOUT : 60000
 }
