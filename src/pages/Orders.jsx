@@ -25,7 +25,7 @@ const [orders, setOrders] = useState([]);
 
           useEffect(() => {
         
-                  const fetchCartItems = async () => {
+                  const fetchFoodItems = async () => {
         
                       try {
         
@@ -37,12 +37,11 @@ const [orders, setOrders] = useState([]);
         
                       } catch (error) {
                           console.error(error);
-                          toast.error(error.response?.data?.message || "Failed to load Orders");
                       }
         
                   };
         
-                  fetchCartItems();
+                  fetchFoodItems();
         
               }, []);
         
