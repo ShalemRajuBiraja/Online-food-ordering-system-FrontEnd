@@ -10,7 +10,7 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <BrowserRouter basename="/Java_FullStack_Project_Food_Ordering_System_Front-end/">
+    <BrowserRouter basename="/food-ordering-website-frontend/">
       <App />
     </BrowserRouter>
   </StrictMode>
