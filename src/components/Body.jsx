@@ -44,7 +44,7 @@ const Body = () => {
 
   return (
     <div className="body-container">
-      <h1 className="text-center my-4">Welcome to Our Delicious F❤️❤️ds</h1>
+      <h1 className="text-center my-4">Welcome to Our Website❤️</h1>
 
       {/* Food Items Grid — 4 per row on desktop, responsive down to 1 on mobile */}
       <div className="container">
