@@ -50,7 +50,7 @@ const Contact = () => {
         console.error(error);
 
         toast.error(
-            error.response?.data?.message || "Failed to submit feedback"
+              "please login to submit feedback"
         );
 
     }

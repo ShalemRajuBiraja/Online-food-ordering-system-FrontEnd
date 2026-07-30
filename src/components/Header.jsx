@@ -71,7 +71,7 @@ const Header = () => {
     window.dispatchEvent(new Event("authChange"));
 
     setIsLoggedIn(false);
-    toast.error("Logout success");
+    toast.success("Logout success");
     navigate("/home");  };
 
   return (
