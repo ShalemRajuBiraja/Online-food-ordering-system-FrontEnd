@@ -12,5 +12,5 @@ import react from "@vitejs/plugin-react";
 
 export default defineConfig({
   plugins: [react()],
-  base: "/Java_FullStack_Project_Food_Ordering_System_Front-end/",
+  base: "/food-ordering-website-frontend/",
 });
