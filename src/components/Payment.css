@@ -1,0 +1,123 @@
+/* Payment.css */
+
+.payment-page {
+  min-height: 100vh;
+  padding: 2.5rem 1rem;
+}
+
+.payment-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+.delivery-address-box {
+  background-color: #fff8f5;
+  border: 1px solid #ffd5c2;
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.no-address-warning {
+  background-color: #fdeceb;
+  border: 1px solid #f5c6cb;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  font-size: 0.9rem;
+  color: #c0392b;
+}
+.upi-unavailable-notice {
+  background-color: #fff3cd;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+}
+
+.payment-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.5rem;
+  height: 100%;
+}
+
+/* Order Summary */
+.order-summary-row {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.6rem;
+}
+
+.order-summary-total {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #1a1a1a;
+}
+
+/* Payment Method Options */
+.payment-option {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 10px;
+  padding: 0.9rem 1rem;
+  margin-bottom: 0.75rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.payment-option:hover {
+  border-color: #ff6b35;
+}
+
+.payment-option.selected {
+  border-color: #ff6b35;
+  background-color: #fff8f5;
+}
+
+.payment-option input[type="radio"] {
+  accent-color: #ff6b35;
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+}
+
+.payment-option-label {
+  margin: 0;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  flex: 1;
+}
+
+.upi-input-wrapper {
+  padding-left: 0.25rem;
+}
+
+.btn-primary {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+  font-weight: 600;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #e85a2a;
+  border-color: #e85a2a;
+}
+
+.back-to-cart-link {
+  color: #ff6b35;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.back-to-cart-link:hover {
+  color: #e85a2a;
+  text-decoration: underline;
+}

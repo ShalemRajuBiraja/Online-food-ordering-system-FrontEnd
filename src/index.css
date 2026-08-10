@@ -1,0 +1,16 @@
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* prevents accidental horizontal scrollbar */
+  background: linear-gradient(135deg, #f7f3f1 0%, #f8e9e3 100%);
+  min-height: 100vh;
+}
+
+#root {
+  width: 100%;
+}

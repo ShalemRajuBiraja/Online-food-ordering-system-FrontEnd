@@ -1,0 +1,103 @@
+/* ManageAddresses.css
+   Bootstrap handles form-control/btn/row-col grid.
+   These rules add page layout, cards, and the address list styling. */
+
+.manage-addresses-page {
+  min-height: 100vh;
+  background: #fafafa;
+  padding: 2.5rem 1rem;
+}
+
+.manage-addresses-container {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Add/Edit Form Card */
+.address-form {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.75rem;
+}
+
+/* Address List */
+.address-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.address-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.address-card-body {
+  flex: 1;
+  min-width: 200px;
+}
+
+.address-text {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.address-card-actions {
+  display: flex;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.btn-primary {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: #e85a2a;
+  border-color: #e85a2a;
+}
+
+.btn-outline-primary {
+  color: #ff6b35;
+  border-color: #ff6b35;
+}
+
+.btn-outline-primary:hover {
+  background-color: #ff6b35;
+  border-color: #ff6b35;
+}
+
+.back-to-home-link {
+  color: #ff6b35;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.back-to-home-link:hover {
+  color: #e85a2a;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .address-card {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .address-card-actions {
+    width: 100%;
+  }
+
+  .address-card-actions button {
+    flex: 1;
+  }
+}

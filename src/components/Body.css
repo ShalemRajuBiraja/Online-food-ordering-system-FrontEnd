@@ -1,0 +1,118 @@
+.body-container {
+    min-height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.body-container h1 {
+    font-size: 40px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.body-container p {
+    font-size: 22px;
+    font-weight: 400;
+}
+
+/* Food Card */
+.food-card {
+    border: none;
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.food-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1) !important;
+}
+
+.food-card .card-body {
+    padding: 0.85rem;
+}
+
+.food-card-img {
+    height: 130px;
+    object-fit: cover;
+}
+
+.food-description {
+    min-height: 20px;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    font-size: 0.85rem;
+}
+
+.food-price {
+    color: #ff6b35;
+    font-size: 1.1rem;
+}
+
+.food-card .d-flex.flex-column.gap-2 {
+    gap: 0.4rem !important;
+}
+
+/* Quantity Stepper */
+.quantity-stepper button {
+    width: 32px;
+    height: 32px;
+    padding: 0;
+    line-height: 1;
+}
+
+/* Pagination Container */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+
+/* Previous & Next Buttons */
+.pagination button {
+    padding: 8px 20px;
+
+    border: none;
+    border-radius: 8px;
+
+    font-size: 16px;
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+
+
+/* Hover Effect */
+.pagination button:hover:not(:disabled) {
+    transform: scale(1.05);
+}
+
+
+/* Disabled Button */
+.pagination button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+}
+
+
+/* Page Number */
+.pagination span {
+    padding: 8px 15px;
+
+    border-radius: 8px;
+
+    font-size: 17px;
+    font-weight: bold;
+}

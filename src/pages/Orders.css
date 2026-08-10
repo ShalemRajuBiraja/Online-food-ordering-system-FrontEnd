@@ -1,0 +1,121 @@
+/* Orders.css */
+
+.orders-page {
+  min-height: 100vh;
+  padding: 2.5rem 1rem;
+}
+
+.orders-container {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.orders-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.order-row {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1.25rem 1.5rem;
+}
+
+.order-row-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.order-id {
+  font-weight: 700;
+  color: #1a1a1a;
+  font-size: 0.95rem;
+}
+
+.order-items {
+  color: #555;
+  font-size: 0.9rem;
+}
+
+.order-row-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.9rem;
+}
+
+.order-date {
+  color: #888;
+}
+
+.order-total {
+  font-weight: 700;
+  color: #ff6b35;
+}
+
+/* Status Badges */
+.status-badge {
+  display: inline-block;
+  padding: 0.25rem 0.75rem;
+  border-radius: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+.status-delivered {
+  background-color: #fff;
+  color: #1a7d3c;
+}
+
+.status-pending {
+  background-color: #eac6c6;
+  color: #f06f29;
+}
+
+.status-cancelled {
+  background-color: #fdeceb;
+  color: #c0392b;
+}
+
+.back-to-home-link {
+  color: #ff6b35;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.back-to-home-link:hover {
+  color: #e85a2a;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .order-row-header,
+  .order-row-footer {
+    flex-wrap: wrap;
+    gap: 0.4rem;
+  }
+}
+.order-food-info {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin: 0.6rem 0;
+}
+
+.order-food-img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex-shrink: 0;
+}
+
+.order-address {
+  font-size: 0.85rem;
+  margin-bottom: 0.6rem;
+}

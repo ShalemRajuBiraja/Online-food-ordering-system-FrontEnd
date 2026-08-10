@@ -1,0 +1,240 @@
+/* Header.css
+   Bootstrap classes handle the bulk of the styling (navbar, btn, etc.).
+   These rules only add the small touches Bootstrap doesn't cover. */
+
+/* .custom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+} */
+ @media (max-width: 991px) {
+  .navbar-nav.ms-auto {
+    align-items: flex-start !important;
+    padding-top: 0.5rem;
+  }
+
+  .profile-avatar-btn {
+    margin-left: 0 !important;
+  }
+
+  .profile-dropdown {
+    position: static !important;
+    box-shadow: none !important;
+    border: 1px solid #eee;
+    margin-top: 0.5rem;
+  }
+}
+
+.custom-header .navbar-brand {
+  color: #ff6b35;
+  letter-spacing: 0.5px;
+}
+.nav-link-orders {
+  color: #28a745 !important;   /* green */
+  font-weight: 600;
+}
+
+.nav-link-orders:hover {
+  color: #1e7e34 !important;
+}
+
+.nav-link-cart {
+  color: #ff6b35 !important;   /* your brand orange */
+  font-weight: 600;
+}
+
+.nav-link-cart:hover {
+  color: #e85a2a !important;
+}
+
+.custom-header .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.custom-header .nav-link:hover {
+  color: #ff6b35;
+}
+
+.custom-header .bi-person-circle:hover {
+  color: #ff6b35 !important;
+  cursor: pointer;
+}
+
+/* Keep Login/Signup/Logout buttons from stretching full width on desktop,
+   while still stacking nicely on mobile (handled by Bootstrap's w-100). */
+@media (min-width: 992px) {
+  .custom-header .btn-sm.w-100 {
+    width: auto !important;
+  }
+}
+.profile-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-decoration: none;   /* ✅ removes the underline */
+}
+
+.profile-dropdown-item:hover,
+.profile-dropdown-item:visited,
+.profile-dropdown-item:focus {
+  text-decoration: none;   /* ✅ prevents underline appearing on hover/focus/visited too */
+  color: #333;             /* ✅ prevents the "visited link" purple color */
+}
+/* Your Orders — highlighted button */
+.orders-highlight-btn {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #6dd07a, #73e065);
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  padding: 0.4rem 1rem;
+  border-radius: 20px;
+  text-decoration: none !important;
+  box-shadow: 0 3px 10px rgba(53, 255, 191, 0.35);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+
+  /* Subtle pulse animation to catch the eye */
+  animation: ordersPulse 2.5s ease-in-out infinite;
+}
+
+.orders-highlight-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(71, 236, 82, 0.5);
+  animation: none; /* stops pulsing once hovered — feels intentional */
+}
+
+/* Pulse keyframes — gently scales the shadow in and out */
+@keyframes ordersPulse {
+  0%   { box-shadow: 0 3px 10px rgba(255, 107, 53, 0.35); }
+  50%  { box-shadow: 0 3px 18px rgba(255, 107, 53, 0.65); }
+  100% { box-shadow: 0 3px 10px rgba(255, 107, 53, 0.35); }
+}
+
+.profile-dropdown-item:hover {
+  background-color: #fff3ee;
+  color: #5dd38e;
+}
+.custom-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 10%;
+
+    z-index: 1000;
+
+    background-color: white;
+}
+/* Header.css
+   Bootstrap classes handle the bulk of the styling (navbar, btn, etc.).
+   These rules only add the small touches Bootstrap doesn't cover. */
+
+.custom-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1030;
+}
+
+.custom-header .navbar-brand {
+  color: #ff6b35;
+  letter-spacing: 0.5px;
+}
+
+.custom-header .nav-link {
+  font-weight: 500;
+  color: #333;
+}
+
+.custom-header .nav-link:hover {
+  color: #ff6b35;
+}
+
+.custom-header .bi-person-circle:hover {
+  color: #ff6b35 !important;
+  cursor: pointer;
+}
+
+/* Keep Login/Signup/Logout buttons from stretching full width on desktop,
+   while still stacking nicely on mobile (handled by Bootstrap's w-100). */
+@media (min-width: 992px) {
+  .custom-header .btn-sm.w-100 {
+    width: auto !important;
+  }
+}
+
+/* Profile Avatar (initials) */
+.profile-avatar-btn {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff6b35;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.profile-avatar-btn:hover {
+  background-color: #e85a2a;
+}
+
+/* Profile Dropdown */
+.profile-dropdown {
+  position: absolute;
+  top: calc(100% + 10px);
+  right: 0;
+  background: #fff;
+  border-radius: 10px;
+  min-width: 200px;
+  padding: 0.5rem 0;
+  z-index: 1050;
+}
+
+.profile-dropdown-item {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+.profile-dropdown-item:hover {
+  background-color: #fff3ee;
+  color: #35ea21;
+}
+.profile-dropdown-divider {
+  margin: 0.4rem 0;
+  border-color: #eee;
+}
+
+.profile-dropdown-logout {
+  color: #dc3545;
+}
+
+.profile-dropdown-logout:hover {
+  background-color: #fdeceb;
+  color: #dc3545;
+}

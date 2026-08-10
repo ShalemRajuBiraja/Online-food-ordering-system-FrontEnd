@@ -1,0 +1,68 @@
+/* Footer.css
+   Bootstrap (bg-dark, container, row/col, list-unstyled, etc.) handles
+   the layout and base styling. These rules add the brand touches and
+   hover states Bootstrap doesn't provide out of the box. */
+
+.custom-footer {
+  background-color: #1a1a1a !important;
+  border-top: 3px solid #ff6b35;
+}
+
+.footer-brand {
+  color: #ff6b35;
+  letter-spacing: 0.5px;
+}
+
+.footer-heading {
+  color: #f1f1f1;
+  font-size: 0.85rem;
+  letter-spacing: 0.5px;
+}
+
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
+  color: #b5b5b5;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.2s ease, padding-left 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ff6b35;
+  padding-left: 4px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.08);
+  transition: background-color 0.2s ease, color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+  background-color: #ff6b35;
+  color: #fff !important;
+  transform: translateY(-3px);
+}
+
+.footer-divider {
+  border-color: rgba(255, 255, 255, 0.15);
+}
+
+/* Slightly tighter spacing on small screens */
+@media (max-width: 576px) {
+  .custom-footer {
+    text-align: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+}

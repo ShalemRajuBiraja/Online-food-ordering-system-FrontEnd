@@ -1,0 +1,60 @@
+/* AdminLogin.css
+   Deliberately styled differently from the customer Login page —
+   darker, more serious tone to visually signal "this is not the customer login". */
+
+.admin-login-page {
+  background: linear-gradient(135deg, #fff8f5 0%, #ffe9e0 100%);
+}
+
+.admin-login-card {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 2.5rem 2rem;
+  width: 100%;
+  max-width: 400px;
+  margin-top : 40px;
+  margin-bottom : 40px
+}
+
+.admin-badge {
+  display: inline-block;
+  background-color: #1a1a1a;
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.admin-login-title {
+  color: #1a1a1a;
+}
+
+.admin-login-btn {
+  font-weight: 600;
+  padding: 0.6rem 0;
+}
+
+.form-control:focus {
+  border-color: #1a1a1a;
+  box-shadow: 0 0 0 0.2rem rgba(26, 26, 26, 0.15);
+}
+
+.back-to-home-link {
+  color: #666;
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.back-to-home-link:hover {
+  color: #1a1a1a;
+  text-decoration: underline;
+}
+
+@media (max-width: 480px) {
+  .admin-login-card {
+    padding: 2rem 1.25rem;
+  }
+}
