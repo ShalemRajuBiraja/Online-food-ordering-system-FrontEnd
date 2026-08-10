@@ -5,4 +5,5 @@ import react from '@vitejs/plugin-react'
 export default defineConfig({
   plugins: [react()],
    base: '/AI-Resume-Analyzer-Frontend/'
+   base1:"airesume-analyzer-frontend"
 })
