@@ -50,7 +50,7 @@ const Body = () => {
         const token = localStorage.getItem("token");
 
         if (!token) {
-            toast.warning("Please login to complete the order process!");
+            toast.error("Please login to complete the order process!");
             return;
         }
 
