@@ -36,7 +36,7 @@ const Footer = () => {
                 <i className="bi bi-instagram fs-5"></i>
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/in/shalem-raju-biraja-081a11319"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="LinkedIn"
@@ -45,7 +45,7 @@ const Footer = () => {
                 <i className="bi bi-linkedin fs-5"></i>
               </a>
               <a
-                href="https://github.com"
+                href="https://github.com/ShalemRajuBiraja"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="GitHub"
