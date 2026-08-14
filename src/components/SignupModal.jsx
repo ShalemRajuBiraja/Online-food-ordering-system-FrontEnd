@@ -81,7 +81,7 @@ const SignupModal = ({ show, onClose, onSwitchToLogin }) => {
         finally {
             setLoading(false);
         }
-    };
+    }
   };
 
   return (
