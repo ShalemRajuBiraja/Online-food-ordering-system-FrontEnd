@@ -160,7 +160,7 @@ const [orders, setOrders] = useState([]);
                       <button
                           type="button"
                           className="btn btn-danger btn-sm"
-                          onClick={() => handleCancelOrder(w.orderId)}
+                          onClick={() => handleCancelOrder(order.orderId)}
                       >
                           Cancel Order
                       </button>

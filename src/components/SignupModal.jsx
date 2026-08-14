@@ -10,6 +10,8 @@ const SignupModal = ({ show, onClose, onSwitchToLogin }) => {
 
   const [signupData, setSignupData] = useState({ fullName: "", email: "", mobileNumber: "", password: ""});
   const [signupErrors, setSignupErrors] = useState({ name: "", email: "", mobile: "", password: "" });
+  const [loading, setLoading] = useState(false);
+
   if (!show) return null;
 
 
@@ -64,6 +66,7 @@ const SignupModal = ({ show, onClose, onSwitchToLogin }) => {
     setSignupErrors(tempErrors);
 
     if (!hasErrors) {
+        setLoading(true);
         try{
               const userData = await signup(signupData);
                 if (userData?.data?.success) {
@@ -74,9 +77,11 @@ const SignupModal = ({ show, onClose, onSwitchToLogin }) => {
         } catch (error) {
             console.log(error.message);
             toast.error( error.response?.data?.message );
-        }finally {
-    
-    } //if closed
+        }
+        finally {
+            setLoading(false);
+        }
+    };
   };
 
   return (
@@ -162,7 +167,14 @@ const SignupModal = ({ show, onClose, onSwitchToLogin }) => {
             </div>
 
             <button type="submit" className="btn btn-primary w-100" >
-              Sign Up
+              {loading ? (
+                <>
+                  <span className="spinner-border spinner-border-sm me-2" role="status" aria-hidden="true"></span>
+                  Creating account...
+                </>
+              ) : (
+                'Create Account'
+              )}
             </button>
           </form>
 
@@ -173,7 +185,7 @@ const SignupModal = ({ show, onClose, onSwitchToLogin }) => {
               className="btn btn-link p-0 align-baseline"
               onClick={onSwitchToLogin}
             >
-              Login
+             Login here
             </button>
           </p>
         </div>
@@ -181,5 +193,6 @@ const SignupModal = ({ show, onClose, onSwitchToLogin }) => {
     </>
   );
 };
+}
 
 export default SignupModal;
