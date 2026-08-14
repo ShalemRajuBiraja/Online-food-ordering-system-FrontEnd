@@ -3,7 +3,7 @@ import { Link  } from "react-router-dom";
 import "./Orders.css";
 import {toast} from "react-toastify";
 import {getOrdersList} from "../services/orderService";
-
+import { cancelOrder } from "../services/orderService";
 
 // Maps a status string to its badge color class
 const getStatusBadgeClass = (status) => {
@@ -21,6 +21,9 @@ const getStatusBadgeClass = (status) => {
 
 const Orders = () => {
 
+  //state variables
+  const [loading, setLoading] = useState(true);
+
 const [orders, setOrders] = useState([]);
 
           useEffect(() => {
@@ -37,6 +40,8 @@ const [orders, setOrders] = useState([]);
         
                       } catch (error) {
                           console.error(error);
+                      }finally {
+                          setLoading(false);
                       }
         
                   };
@@ -45,7 +50,42 @@ const [orders, setOrders] = useState([]);
         
               }, []);
         
+  const handleCancelOrder = async (orderId) => {
 
+    const confirmCancel = window.confirm(
+        "Are you sure you want to cancel this order?"
+    );
+
+    if (!confirmCancel) {
+        return;
+    }
+
+    try {
+
+        const response = await cancelOrder(orderId);
+
+        if (response.data.success) {
+
+            toast.success("Order cancelled successfully");
+            window.location.reload();
+            // Refresh orders
+            const updatedOrders = await getOrdersList();
+
+            if (updatedOrders.data.success) {
+                setOrders(updatedOrders.data.data);
+            }
+        }
+
+    } catch (error) {
+
+        console.error(error);
+
+        toast.error(
+            error.response?.data?.message ||
+            "Failed to cancel order"
+        );
+    }
+};
 
 
 
@@ -54,10 +94,21 @@ const [orders, setOrders] = useState([]);
       <div className="orders-container">
         <h2 className="fw-bold mb-4">Order History</h2>
 
-        {orders.length === 0 ? (
-          <p className="text-secondary text-center py-5">
-            You haven't placed any orders yet.
-          </p>
+            {loading ? (
+          <div className="text-center py-5">
+              <div className="spinner-border" role="status"></div>
+
+              <p className="mt-2">
+                  Loading your orders...
+              </p>
+          </div>
+
+        ) : orders.length === 0 ? (
+
+            <p className="text-secondary text-center py-5">
+                You haven't placed any orders yet.
+            </p>
+
         ) : (
           <div className="orders-list">
             {orders.map((order) => (
@@ -95,14 +146,27 @@ const [orders, setOrders] = useState([]);
                 </div>
 
                 {/* Footer: Date + Total */}
-                <div className="order-row-footer">
+               <div className="order-row-footer">
+
                   <span className="order-date">
-                    {new Date(order.createdAt).toLocaleDateString("en-IN")}
+                      {new Date(order.createdAt).toLocaleDateString("en-IN")}
                   </span>
+
                   <span className="order-total">
-                    ₹{Number(order.total).toFixed(2)}
+                      ₹{Number(order.total).toFixed(2)}
                   </span>
-                </div>
+
+                  {order.status === "Pending" && (
+                      <button
+                          type="button"
+                          className="btn btn-danger btn-sm"
+                          onClick={() => handleCancelOrder(w.orderId)}
+                      >
+                          Cancel Order
+                      </button>
+                  )}
+
+              </div>
               </div>
             ))}
           </div>

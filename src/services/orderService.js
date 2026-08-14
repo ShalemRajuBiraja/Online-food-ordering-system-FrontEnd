@@ -7,4 +7,6 @@ export const getOrdersList = () => {
 export const placeOrder = (orderData) => {
     return axiosInstance.post(API_ENDPOINTS.ORDER_PLACE, orderData);
 }
-
+export const cancelOrder = (orderId) => {
+    return axiosInstance.put(`/orders/${orderId}/cancel`);
+};
